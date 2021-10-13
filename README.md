@@ -18,5 +18,11 @@ Basic web application with simple REST API.
 
 5. Open unpacked folder as a project with IntelliJ.
 
-6. Go to ``src/main/java/sk/umb/fpv/dain142demo/Application.java`` and run application.
+6. Configure project Java SDK 
+
+7. Run ``mvn clean package`` or ``mvn clean install`` using 
+   - terminal command from project root directory
+   - IntelliJ Maven control panel
+
+8. Go to ``src/main/java/sk/umb/fpv/dain142demo/Application.java`` and run application.
    
