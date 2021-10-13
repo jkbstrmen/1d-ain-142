@@ -1,5 +1,9 @@
 # 1d-ain-142
 
+Basic web application with simple REST API. 
+
+## Steps to create new project
+
 1. Go to https://start.spring.io/
 
 2. Fill out form for example according to this:
