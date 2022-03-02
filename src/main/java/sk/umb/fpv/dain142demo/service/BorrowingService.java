@@ -1,37 +1,43 @@
 package sk.umb.fpv.dain142demo.service;
 
 import org.springframework.stereotype.Service;
-import sk.umb.fpv.dain142demo.controller.dto.BorrowingDto;
-import sk.umb.fpv.dain142demo.domain.Book;
-import sk.umb.fpv.dain142demo.domain.Borrowing;
-import sk.umb.fpv.dain142demo.domain.Customer;
+import sk.umb.fpv.dain142demo.domain.model.Borrowing;
+import sk.umb.fpv.dain142demo.domain.repository.BorrowingRepository;
+
+import java.util.List;
+import java.util.Optional;
 
 @Service
 public class BorrowingService {
 
     private BookService bookService;
     private CustomerService customerService;
+    private BorrowingRepository borrowingRepository;
 
-    public BorrowingService(BookService bookService, CustomerService customerService) {
+    public BorrowingService(BookService bookService, CustomerService customerService, BorrowingRepository borrowingRepository) {
         this.bookService = bookService;
         this.customerService = customerService;
+        this.borrowingRepository = borrowingRepository;
     }
 
-    public BorrowingDto getBorrowingById(Integer borrowingId) {
+    public Borrowing getBorrowingById(Integer borrowingId) {
+        Optional<Borrowing> byId = borrowingRepository.findById(borrowingId);
 
-        // TODO - find borrowing by borrowingId
+        // TODO - check if borrowing is present
+
+        return byId.get();
+    }
+
+    public Borrowing createBorrowing(Integer bookId, Integer customerId){
         Borrowing borrowing = new Borrowing();
 
-        // get customer by id from borrowing
-        Customer customer = customerService.getById(borrowing.getCustomerId());
+        // TODO - find book and customer using services and set found objects to borrowing
 
-        // get book by id from borrowing
-        Book book = bookService.getById(borrowing.getBookId());
+        return borrowingRepository.save(borrowing);
+    }
 
-        // TODO - map required properties from book and customer to borrowingDto
-        BorrowingDto borrowingDto = new BorrowingDto();
-
-        return borrowingDto;
+    public List<Borrowing> getAllBorrowings() {
+        return borrowingRepository.findAll();
     }
 
 }
