@@ -14,7 +14,7 @@ Basic web application with simple REST API.
 - Run command in directory consisting docker-compose.yml to get postgres database up and running 
 
 
-     docker-compose up -d 
+        docker-compose up -d 
 
 - Add maven dependencies to pom.xml for postgres and jpa support
     
@@ -32,14 +32,14 @@ Basic web application with simple REST API.
 - configure SpringBoot connection to database in configuration file (should be in path: src/main/resources/application.properties)
 
 
-    spring.datasource.url=jdbc:postgresql://localhost:5432/library
-    spring.datasource.username=postgres
-    spring.datasource.password=example
-    spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.PostgreSQL81Dialect
-    
-    spring.jpa.hibernate.ddl-auto=update
-    spring.jpa.show-sql=true
-    spring.jpa.properties.hibernate.format_sql=true
+        spring.datasource.url=jdbc:postgresql://localhost:5432/library
+        spring.datasource.username=postgres
+        spring.datasource.password=example
+        spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.PostgreSQL81Dialect
+        
+        spring.jpa.hibernate.ddl-auto=update
+        spring.jpa.show-sql=true
+        spring.jpa.properties.hibernate.format_sql=true
 
 - Use @Entity annotation for entities, and create interfaces extending JpaRepository for repositories as shown in code
 
