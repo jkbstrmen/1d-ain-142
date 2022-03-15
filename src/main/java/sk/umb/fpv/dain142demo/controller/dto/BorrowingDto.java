@@ -6,6 +6,13 @@ public class BorrowingDto {
     // TODO - implement required field according to REST API
 
     private Integer id;
+    private Integer customerId;
+    private String customerName;
+    private Integer bookId;
+    private String authorName;
+    private String title;
+
+    // GETTERS AND SETTERS
 
     /*
     * GETTERS
