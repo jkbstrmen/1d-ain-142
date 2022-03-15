@@ -1,5 +1,6 @@
 package sk.umb.fpv.dain142demo.service;
 
+import javax.transaction.Transactional;
 import org.springframework.stereotype.Service;
 import sk.umb.fpv.dain142demo.domain.model.Borrowing;
 import sk.umb.fpv.dain142demo.domain.repository.BorrowingRepository;
@@ -28,6 +29,10 @@ public class BorrowingService {
         return byId.get();
     }
 
+    /**
+     * @Transactional creates database transaction for this function - for more information see readme.
+     */
+    @Transactional
     public Borrowing createBorrowing(Integer bookId, Integer customerId){
         Borrowing borrowing = new Borrowing();
 

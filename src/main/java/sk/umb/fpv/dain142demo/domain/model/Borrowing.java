@@ -9,16 +9,17 @@ public class Borrowing {
     @GeneratedValue
     private Integer id;
 
-    // @JoinColumn and @ManyToOne will be explained next lesson
-
-    @JoinColumn
-    @ManyToOne
+    /**
+     * Join column name defines the name of column where we want to store primary key of rows of referenced table.
+     * @ManyToOne in this example means, that many borrowings can reference to one book.
+     * For difference between fetch type LAZY vs EAGER see readme.
+     */
+    @JoinColumn(name = "book_id")
+    @ManyToOne(fetch = FetchType.LAZY)
     private Book book;
 
-    @JoinColumn
-    @ManyToOne
-    private Customer customer;
 
+    // TODO - add Customer field
 
     // TODO - implement getters and setters
 

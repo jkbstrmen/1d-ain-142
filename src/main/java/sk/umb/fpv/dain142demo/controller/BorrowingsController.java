@@ -7,8 +7,10 @@ import sk.umb.fpv.dain142demo.controller.dto.BorrowingDto;
 import sk.umb.fpv.dain142demo.domain.model.Borrowing;
 import sk.umb.fpv.dain142demo.service.BorrowingService;
 
-import java.util.List;
-
+/**
+ * Controller layer uses DTO for communication with client. For communication with Service layer uses Entity.
+ *
+ */
 @RestController
 public class BorrowingsController {
 
