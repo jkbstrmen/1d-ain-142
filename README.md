@@ -199,5 +199,16 @@ Or try [this](https://paulbares.medium.com/quick-tip-oauth2-with-keycloak-and-po
 ... TODO ...
 
 
+## Keycloak Admin Client
+
+Add to pom.xml
+
+```xml
+        <dependency>
+			<groupId>org.keycloak</groupId>
+			<artifactId>keycloak-admin-client</artifactId>
+			<version>15.0.1</version>
+		</dependency>
+```
 
 
