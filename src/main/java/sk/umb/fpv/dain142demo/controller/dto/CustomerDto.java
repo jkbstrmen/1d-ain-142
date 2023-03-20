@@ -1,17 +1,8 @@
-package sk.umb.fpv.dain142demo.domain.model;
+package sk.umb.fpv.dain142demo.controller.dto;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+public class CustomerDto {
 
-@Entity
-public class Customer {
-
-    @Id
-    @GeneratedValue
     private Integer id;
-
-    // TODO - implement getters and setters
 
     private String firstName;
 
